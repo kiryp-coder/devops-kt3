@@ -6,7 +6,7 @@ describe('Маршруты приложения', () => {
     const response = await request(app).get('/')
 
     expect(response.status).toBe(200)
-    expect(response.text).toBe('KT3 App')
+    expect(response.text).toBe('KT3 App сломан нарочно')
   })
 
   test('GET /health возвращает { status: "ok" }', async () => {
