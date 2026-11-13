@@ -16,9 +16,10 @@ describe('Маршруты приложения', () => {
     expect(response.body).toEqual({ status: 'ok' })
   })
 
-  test('неизвестный маршрут возвращает 404', async () => {
+  test('неизвестный маршрут возвращает 404 в формате JSON', async () => {
     const response = await request(app).get('/unknown')
 
     expect(response.status).toBe(404)
+    expect(response.body).toEqual({ error: 'Маршрут не найден' })
   })
 })

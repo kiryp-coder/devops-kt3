@@ -10,4 +10,8 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok' })
 })
 
+app.use((req, res) => {
+  res.status(404).json({ error: 'Маршрут не найден' })
+})
+
 module.exports = app
